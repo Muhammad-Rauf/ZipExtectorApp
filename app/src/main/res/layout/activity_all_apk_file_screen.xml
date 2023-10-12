@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.AllApkFileScreen">
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/allVideosToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/darksky"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+</androidx.appcompat.widget.Toolbar>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/allApkFilesRecyclerview_id"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintBottom_toTopOf="@+id/apkBottomsheetLayout"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/allVideosToolbar"
+    tools:listitem="@layout/galleryitem_layout">
+
+</androidx.recyclerview.widget.RecyclerView>
+
+<ImageView
+    android:id="@+id/imageView"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="16dp"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="@+id/allVideosToolbar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/allVideosToolbar"
+    app:srcCompat="@drawable/back_icon" />
+
+<TextView
+    android:id="@+id/textView6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="24dp"
+    android:fontFamily="@font/robotomedium"
+    android:padding="5dp"
+    android:text="Photos"
+    android:visibility="gone"
+    android:textColor="@color/gray_color"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toBottomOf="@+id/allVideosToolbar"
+    app:layout_constraintStart_toEndOf="@+id/imageView"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<CheckBox
+    android:id="@+id/checkBoxImages"
+    android:layout_width="21dp"
+    android:layout_height="21dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/custom_checkbox"
+    android:button="@color/colorTransparent"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="@+id/allVideosToolbar"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/allVideosToolbar" />
+
+<TextView
+    android:id="@+id/imagestoolbarTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="24dp"
+    android:fontFamily="@font/robotomedium"
+    android:padding="5dp"
+    android:text="Apk Files"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    app:layout_constraintBottom_toBottomOf="@+id/allVideosToolbar"
+    app:layout_constraintEnd_toStartOf="@+id/checkBoxImages"
+    app:layout_constraintStart_toEndOf="@+id/crossAllSelectedItems"
+    app:layout_constraintTop_toTopOf="@+id/allVideosToolbar" />
+
+<ImageView
+    android:id="@+id/crossAllSelectedItems"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_marginStart="16dp"
+    app:layout_constraintBottom_toBottomOf="@+id/allVideosToolbar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/allVideosToolbar"
+    app:srcCompat="@drawable/cross_icon" />
+
+<androidx.constraintlayout.widget.Group
+    android:id="@+id/longPressView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible"
+    app:constraint_referenced_ids="crossAllSelectedItems,checkBoxImages" />
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/apkBottomsheetLayout"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#124087F5"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/compressLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ripleeffect_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/extractLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/itemsCountLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:src="@drawable/app_zipicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotomedium"
+        android:text="Compress"
+        android:textColor="@color/gray_color"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@+id/compressLayout"
+        app:layout_constraintStart_toStartOf="@+id/compressLayout"
+        app:layout_constraintTop_toBottomOf="@+id/compressLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/extractLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ripleeffect_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/moreLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/compressLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:src="@drawable/archives_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotomedium"
+        android:text="Extract"
+        android:textColor="@color/gray_color"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@+id/extractLayout"
+        app:layout_constraintStart_toStartOf="@+id/extractLayout"
+        app:layout_constraintTop_toBottomOf="@+id/extractLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/moreLayout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ripleeffect_round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/extractLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:src="@drawable/menue_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/robotomedium"
+        android:text="More"
+        android:textColor="@color/gray_color"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="@+id/moreLayout"
+        app:layout_constraintStart_toStartOf="@+id/moreLayout"
+        app:layout_constraintTop_toBottomOf="@+id/moreLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemsCountLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/itemcountshape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/compressLayout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_baseline_folder_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvItemsCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/robotomedium"
+            android:padding="5dp"
+            android:text="0"
+            android:textColor="@color/darksky"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

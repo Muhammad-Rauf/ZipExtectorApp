@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/crossAll_id"
+        android:icon="@drawable/cancel_icon"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item android:title=""
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_check_unselected"
+        android:id="@+id/checkBox_Id"/>
+    <item
+        android:id="@+id/zipMenu_id"
+        android:icon="@drawable/menu_icon"
+        android:title=""
+        app:showAsAction="ifRoom" />
+</menu>

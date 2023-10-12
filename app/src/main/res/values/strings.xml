@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ZipExtectorApp</string>
+    <string name="gallery">Gallery</string>
+    <string name="music">Music</string>
+    <string name="video">Video</string>
+    <string name="apps">Apps</string>
+    <string name="compressed">Compressed</string>
+    <string name="documents">Documents</string>
+    <string name="downloads">Downloads</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="photos">Photos</string>
+    <string-array name="spinner_items_array">
+        <item>zip</item>
+        <item>rar</item>
+        <item>tar</item>
+        <item>tar</item>
+        <item>7z</item>
+    </string-array>
+</resources>
